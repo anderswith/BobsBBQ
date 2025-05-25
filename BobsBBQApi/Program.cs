@@ -121,6 +121,8 @@ public class Program
         }
         app.UseCors("AllowAll");
         app.UseHttpsRedirection();
+        app.UseRouting(); // DEN
+        app.UseCors("AllowAll"); // DEN
         app.UseAuthentication();
         app.UseAuthorization();
         app.UseDefaultFiles(); 
