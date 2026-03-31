@@ -1,28 +1,28 @@
 # BobsBBQ
 
-BobsBBQ er en webapplikation til bordbestilling for en restaurant.
-Systemet gør det muligt for brugere at oprette en konto, se menuen og reservere borde inden for tilgængelige tidsperioder.
+BobsBBQ is a web application for table reservations at a restaurant.
+The system allows users to create an account, view the menu, and reserve tables within available time slots.
 
-Projektet er udviklet med fokus på både backend-funktionalitet og DevOps-processer, herunder automatiseret test, CI/CD og deployment.
-
----
-
-## Funktionalitet
-
-* Oprettelse af bruger og login
-* Password hashing med salt
-* JWT-baseret authentication
-* Bordbestilling inden for tilgængelige tidsrum
-* Visning af restaurantens menu
-* Email-bekræftelse ved:
-
-  * Kontooprettelse
-  * Bordreservation
-* Validering af booking (undgå overlap)
+The project is developed with a focus on both backend functionality and DevOps practices, including automated testing, CI/CD, and deployment.
 
 ---
 
-## Teknologi
+## Functionality
+
+* User registration and login
+* Password hashing with salt
+* JWT-based authentication
+* Table reservations within available time slots
+* Display of the restaurant menu
+* Email confirmation for:
+
+  * Account creation
+  * Table reservations
+* Booking validation (prevent overlapping reservations)
+
+---
+
+## Technology
 
 * C# / .NET (REST API)
 * HTML frontend (wwwroot)
@@ -35,49 +35,49 @@ Projektet er udviklet med fokus på både backend-funktionalitet og DevOps-proce
 
 ## DevOps
 
-Projektets primære fokus har været DevOps og automatisering.
+The primary focus of the project has been DevOps and automation.
 
 ### Containerization
 
-* Docker til containerisering af applikationen
-* Docker Compose til at orkestrere services (API + database)
+* Docker for containerizing the application
+* Docker Compose for orchestrating services (API + database)
 
 ### CI/CD Pipeline
 
-Pipeline er implementeret via GitHub Actions (YAML) og inkluderer:
+The pipeline is implemented using GitHub Actions (YAML) and includes:
 
-* Automatisk build ved push
-* Kørsel af unit tests
+* Automatic build on push
+* Running unit tests
 * Code coverage
-* Statisk kodeanalyse med SonarQube
-* Mutation testing med Stryker
-* Performance/spike tests med k6
+* Static code analysis with SonarQube
+* Mutation testing with Stryker
+* Performance/spike testing with k6
 
 ### Deployment
 
-* Applikationen buildes som Docker image
-* Image versioneres og pushes til GitHub Container Registry
-* Automatisk deployment til staging server (Oracle Cloud)
-* Database migration køres mod MariaDB
+* The application is built as a Docker image
+* The image is versioned and pushed to GitHub Container Registry
+* Automatic deployment to a staging server (Oracle Cloud)
+* Database migrations are applied to MariaDB
 
-### Secrets og konfiguration
+### Secrets and Configuration
 
-* GitHub Secrets og variables anvendes til håndtering af credentials og konfiguration i pipeline
+* GitHub Secrets and variables are used to manage credentials and configuration in the pipeline
 
 ---
 
-## Arkitektur
+## Architecture
 
 ### Frontend
 
-* HTML i wwwroot
-* Kommunikerer med backend via HTTP requests
+* HTML in wwwroot
+* Communicates with the backend via HTTP requests
 
 ### Backend
 
 * C# REST API
-* Håndterer authentication, booking og forretningslogik
+* Handles authentication, booking, and business logic
 
 ### Database
 
-* MariaDB til lagring af brugere, bookings og data
+* MariaDB used for storing users, bookings, and related data
